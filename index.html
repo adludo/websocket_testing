@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" conten="width=device-width, initial-scale=1.0">
+        <title>Websockets</title>
+    </head>
+
+    <body>
+        <h1>Websocket Basics</h1>
+        <ul class="tsummary">
+            <li>allows two-way, event driven communication between web browser and server</li>
+            <li>great fr <strong>real-time</strong> applications</li>
+            <li>after this tutorial create simple WebSockets app</li>
+        </ul>
+    </body>
+
+    <script>
+        // use wss for prod
+        const ws = new WebSocket("ws://localhost:8082");
+
+        ws.addEventListener("open", () => {
+            console.log("we are connected");
+
+            ws.send("how you going")
+        })
+
+        ws.addEventListener("message", e => {
+            console.log(e);
+        });
+
+    </script>
+
+</html>
